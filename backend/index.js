@@ -8,7 +8,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({ origin:  "https://gitroast-silk.vercel.app/"}));
+app.use(
+  cors({
+    origin: "https://gitroast-silk.vercel.app", // exact origin, no trailing slash
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 app.get("/", (req, res) => {
   res.json("Roast Backend is up!");
