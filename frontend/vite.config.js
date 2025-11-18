@@ -11,7 +11,7 @@ export default defineConfig({
   ],server: {
     proxy: {
       '/api': {
-        target: "https://gitroast-backend.vercel.app",
+        target: "https://gitroast-backend.vercel.app/",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
