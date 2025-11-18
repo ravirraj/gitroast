@@ -19,7 +19,7 @@ const App = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/github/${username}`
+        `/api/github/${username}`
       );
       console.log(response);
       setRoast(response.data.roast);

@@ -11,7 +11,7 @@ export default defineConfig({
   ],server: {
     proxy: {
       '/api': {
-        target: import.meta.env.VITE_API_URL,
+        target: "https://gitroast-backend.vercel.app",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
